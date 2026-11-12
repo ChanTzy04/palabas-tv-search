@@ -1,11 +1,10 @@
 /*
   Palabas - TV Show Search
-  Beginner-friendly version for the class activity.
-  The URL functions and helper functions above the TODO sections
-  were provided in the starter file, so they are kept unchanged.
+  The URL functions/builder and helper functions located before the TODO parts
+  were already given in our starter file.
 */
 
-// ---------- Given: page elements ----------
+// ---------- Page element Selector ----------
 const form = document.getElementById("searchForm");
 const input = document.getElementById("query");
 const statusText = document.getElementById("status");
@@ -16,7 +15,7 @@ const closeBtn = document.getElementById("closeDetails");
 const modeBadge = document.getElementById("modeBadge");
 const favoritesList = document.getElementById("favoritesList");
 
-// ---------- Given: the API's URLs ----------
+// ---------- TV-Maze API's URLs ----------
 const API = "https://api.tvmaze.com";
 
 function slug(text) {
@@ -40,7 +39,7 @@ function seasonsURL(id) {
   return USE_SAMPLE_DATA ? `data/seasons/${id}.json` : `${API}/shows/${id}/seasons`;
 }
 
-// ---------- Given: helper functions ----------
+// ---------- helper functions ----------
 function setStatus(message, type = "info") {
   statusText.textContent = message;
   statusText.className = "status " + type;
@@ -90,8 +89,10 @@ modeBadge.textContent = USE_SAMPLE_DATA ? "Sample data" : "Live · TVmaze";
 modeBadge.classList.toggle("live", !USE_SAMPLE_DATA);
 
 // ================================================================
-// STEP 1 was used to test the first request. It is left as a comment
-// because it should be deleted after Step 1 to avoid extra requests.
+// STEP 1 This code was made to test our very first API request
+// I kept it commented here for reference. Once Step 1 is done, we
+// need to removed it so our program won't send unnecessary request
+// to the API!
 // ================================================================
 
 // ================================================================
